@@ -1,12 +1,27 @@
- version: 2.1
-
- orbs:
-  win: circleci/windows@2.2.0
-
- jobs:
-   build:
-     executor: win/default     
-    
-     steps:
-       - checkout
-       - run: dotnet build
+# 假設有一個稱為 jsProjects 的資料夾
+2 c:\> cd jsProjects
+3
+4 # 建立專案資料夾
+5 c:\jsProjects> mkdir draft
+6
+7 # 進入範例專案資料夾
+8 c:\jsProjects> cd draft
+9
+10 # 讓 git 來管理這個資料夾
+11 c:\jsProjects\draft> git init
+1 # 和 github 上的專案建立連結
+2 c:\jsProjects\draft (master)> git remote add origin
+,→ https://ywchiao@github.com/ywchiao/draft.git
+3
+4 # 設定 master branch 追踪 github 上的 origin/master
+5 c:\jsProjects\draft (master)> git branch
+,→ --set-upstream-to=origin/master master
+6
+7 # 同步 github 上的資訊
+8 c:\jsProjects\draft (master -> origin)> git pull
+,→ origin
+# 進入範例專案資料夾
+2 c:\> cd \jsProjects\draft
+3
+4 # 讓 npm 來管理這個資料夾
+5 c:\jsProjects\draft> npm init
